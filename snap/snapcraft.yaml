@@ -1,0 +1,21 @@
+name: hello-world-go-snap
+version: '0.1' 
+summary: Hello world written in Go
+description: |
+  Test of the go plugin
+
+grade: stable
+confinement: strict
+
+apps:
+  hello-world:
+    command: hello-world
+
+parts:
+  go:
+    source-tag: go1.10.2
+    source-depth: 1
+  hello-world:
+    plugin: go
+    source: .
+    go-importpath: github.com/anonymouse64/hello-world-go-snap
